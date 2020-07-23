@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chen's VueJS-App</title>
 
+    <!-- Usual bootstrap conflicts with the style here. Need to scale into bootstrap-vue. -->
     <link
       href="https://fonts.googleapis.com/css2?family=Karla&display=swap"
       rel="stylesheet"
@@ -47,15 +48,17 @@
             @mouseover="updateProduct(index)"
           ></div>
           <!-- v-on:click = "onClick" in Javascript -->
-          <button
-            v-on:click="addToCart"
-            :disabled="!inStock"
-            :class="{disabledButton:!inStock}"
-          >
-            Add to Cart
-          </button>
-          <div class="cart">
-            <p>Cart({{cart}})</p>
+          <div>
+            <button
+              v-on:click="addToCart"
+              :disabled="!inStock"
+              :class="{disabledButton:!inStock}"
+            >
+              Add to Cart
+            </button>
+            <div class="cart">
+              <p>Cart({{cart}})</p>
+            </div>
           </div>
         </div>
       </div>
