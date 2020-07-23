@@ -43,11 +43,10 @@ img {
   margin-right: 25px;
   float: right;
   border: 1px solid #d8d8d8;
-  padding: 5px 20px;
+  padding: 16px 20px;
 }
 
 button {
-  margin-top: 30px;
   border: none;
   background-color: #1e95ea;
   color: white;
@@ -85,6 +84,7 @@ textarea {
 .tabs {
   margin-left: 20px;
   cursor: pointer;
+  font-size: 1.25rem;
 }
 
 .activeTab {
