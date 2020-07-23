@@ -16,52 +16,14 @@
   <body>
     <div class="nav-bar"></div>
     <div id="app">
-      <div class="product">
-        <div class="product-image">
-          <!-- bind is a dynamic attribute to connect with the js. So when it change it would change here also -->
-          <!-- In other words, if you want this attribute name to work dynamically according to value in the main.js, use bind. -->
-          <img v-bind:src="image" alt="..." />
-
-          <!---- a modern way to do v-bind ---->
-          <!-- <img :src="image" alt="..." /> -->
-        </div>
-        <div class="product-info">
-          <h1>{{title}}</h1>
-          <!-- if else in Vue -->
-          <p v-if="inStock">In Stock</p>
-          <!-- with ":class", it means you're going to use the class in left side if in the right side is "true". -->
-          <!-- in class naming, you must not name it like "linethrough-txt". It won't work. -->
-          <p v-else="inStock" :class="{ linethroughTxt: !inStock }">
-            Out of Stock
-          </p>
-          <ul>
-            <!-- v-for = "map" in Javascript. Built to handle array data. -->
-            <li v-for="detail in details">{{detail}}</li>
-          </ul>
-          <!-- style & binded style is different. -->
-          <div
-            v-for="(variant,index) in variants"
-            :key="variant.variantId"
-            class="color-box"
-            style="cursor: pointer;"
-            :style="{backgroundColor: variant.variantColor}"
-            @mouseover="updateProduct(index)"
-          ></div>
-          <!-- v-on:click = "onClick" in Javascript -->
-          <div>
-            <button
-              v-on:click="addToCart"
-              :disabled="!inStock"
-              :class="{disabledButton:!inStock}"
-            >
-              Add to Cart
-            </button>
-            <div class="cart">
-              <p>Cart({{cart}})</p>
-            </div>
-          </div>
-        </div>
+      <div class="cart">
+        <p>Cart({{cart}})</p>
       </div>
+      <product
+        :premium="premium"
+        @add-to-cart="updateCart"
+        @decrease-the-cart="decreaseCart"
+      ></product>
     </div>
   </body>
 
