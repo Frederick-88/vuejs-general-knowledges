@@ -191,7 +191,7 @@ Vue.component("product-review", {
   template: `
   <form @submit.prevent="OnSubmit">
   <label>Name : </label>
-  <input v-model="reviewerName" required>
+  <input class="py-3 px-2" v-model="reviewerName" required>
   <label>Review : </label>
   <textarea v-model="reviewerReview" required> </textarea>
   
