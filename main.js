@@ -73,7 +73,7 @@ Vue.component("product", {
       details: [
         "80% Cotton",
         "20% Polyster",
-        "Gender Neutral (Both Men & Women)",
+        "Gendera Neutral (Both Men & Women)",
       ],
       variants: [
         {
